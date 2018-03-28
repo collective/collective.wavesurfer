@@ -1,0 +1,3 @@
+=====================collective.wavesurfer
+=====================
+User documentation
