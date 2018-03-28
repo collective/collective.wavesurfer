@@ -18,4 +18,39 @@
       directory="static"
       />
 
+  <browser:page
+      name="wavesurfer_view"
+      for="plone.app.contenttypes.interfaces.IFile"
+      class=".wavesurfer.WavesurferView"
+      template="wavesurfer.pt"
+      layer="collective.wavesurfer.interfaces.ICollectiveWavesurferLayer"
+      permission="zope2.View"
+      menu="plone_displayviews"
+      title="Wavesurfer view"
+      />
+
+  <browser:pages
+      for="plone.dexterity.interfaces.IDexterityContainer"
+      class="plone.app.contenttypes.browser.folder.FolderView"
+      permission="zope2.View">
+    <browser:page
+        name="wavesurfer_listing"
+        template="wavesurfer_listing.pt"
+        menu="plone_displayviews"
+        title="Wavesurfer listing"
+        />
+  </browser:pages>
+
+  <browser:pages
+      for="plone.app.contenttypes.behaviors.collection.ISyndicatableCollection"
+      class="plone.app.contenttypes.browser.collection.CollectionView"
+      permission="zope2.View">
+    <browser:page
+        name="wavesurfer_listing"
+        template="wavesurfer_listing.pt"
+        menu="plone_displayviews"
+        title="Wavesurfer listing"
+        />
+  </browser:pages>
+
 </configure>
