@@ -45,6 +45,8 @@ setup(
         'setuptools',
         'z3c.jbot',
         'plone.app.contenttypes',
+        # patternslib is only needed for development
+        'plone.patternslib',
     ],
     extras_require={
         'test': [
