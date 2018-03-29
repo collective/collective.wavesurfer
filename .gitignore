@@ -33,3 +33,9 @@ report.html
 !.gitkeep
 !.travis.yml
 !src/collective
+/temp_resources
+/package.json
+/package-lock.json
+/node_modules
+/Gruntfile.js
+/.Python
