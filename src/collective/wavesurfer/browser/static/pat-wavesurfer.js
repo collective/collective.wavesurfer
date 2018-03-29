@@ -66,7 +66,6 @@
         var options = parser.parse($(this));
     });
 
-
     return Base.extend({
         name: 'wavesurfer',
         trigger: '.pat-wavesurfer',
@@ -100,20 +99,7 @@
                 backend: options.backend,
                 mediaType: options.mediaType
             });
-
-            //desperate attempt to get base_url of the protraxx file
-            //lets get it from options.url
-            var base_url=options.url.split('/@@')[0]
-            var peak_url=base_url+'/@@peaks';
-
-            //request peak data from traxx and feed it into wavesurfer
-            $.ajax({
-              url: peak_url,
-              context: document.body,
-            }).done(function(data) {
-              var peaks=JSON.parse(data)
-              wavesurfer.load(options.url,peaks)
-            });
+            wavesurfer.load(options.url);
 
             $(this.$el.find('.controlsContainer')).prepend('<div class="playerControls">\
                                 <div class="btn btnPlay">\
