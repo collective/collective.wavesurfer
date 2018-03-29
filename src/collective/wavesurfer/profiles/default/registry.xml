@@ -1,6 +1,11 @@
 <?xml version="1.0"?>
 <registry>
 
+  <records prefix="plone.resources/pat-parser"
+          interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+      <value key="js">++plone++patternslib/components/patternslib/src/core/parser.js</value>
+  </records>
+
   <records
       prefix="plone.resources/wavesurfer"
       interface="Products.CMFPlone.interfaces.IResourceRegistry">

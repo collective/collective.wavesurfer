@@ -43,6 +43,21 @@
             </span>
           </div>
 
+          <div class="pat-wavesurfer"
+               tal:define="audioURL string:${item_url}/@@download/file;
+                           waveColor string:waveColor: #007bb1;"
+               tal:attributes='data-pat-wavesurfer string:{"url":"$audioURL", "waveColor": "#007bb1", "progressColor": "#e6e4e4", "barWidth": "3", "cursorWidth": "2", "cursorColor": "#e6e4e4", "height": 40}'>
+                <div class="controlsContainer">
+                  <div class="waveformContainer">
+                    <div class="waveformWrapper"></div>
+                  </div>
+                  <div class="playerControls">
+                    <span class="btn btnPlay">Play</span>
+                  </div>
+                </div>
+          </div>
+
+
           <div class="tileFooter">
             <a tal:attributes="href item_link"
                 i18n:translate="read_more">

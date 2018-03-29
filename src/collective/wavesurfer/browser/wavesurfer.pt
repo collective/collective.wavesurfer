@@ -27,9 +27,20 @@
     <source tal:attributes="src download_url; type content_type"></source>
   </video>
 
-  <audio tal:condition="view/is_audiotype" controls="controls">
-    <source tal:attributes="src download_url; type content_type"></source>
-  </audio>
+  <div class="pat-wavesurfer"
+       tal:condition="view/is_audiotype"
+       tal:define="audioURL download_url;
+                   waveColor string:waveColor: #007bb1;"
+       tal:attributes='data-pat-wavesurfer string:{"url":"$audioURL", "waveColor": "#007bb1", "progressColor": "#e6e4e4", "barWidth": "3", "cursorWidth": "2", "cursorColor": "#e6e4e4", "height": 40}'>
+        <div class="controlsContainer">
+          <div class="waveformContainer">
+            <div class="waveformWrapper"></div>
+          </div>
+          <div class="playerControls">
+            <span class="btn btnPlay">Play</span>
+          </div>
+    </div>
+
 
   <div tal:condition="python: content_type.startswith('text')">
     <h2 i18n:translate="heading_file_contents">File contents</h2>
