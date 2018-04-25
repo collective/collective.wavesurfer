@@ -6,33 +6,20 @@
 collective.wavesurfer
 =====================
 
-Tell me what your product does
+Implementation of https://wavesurfer-js.org audio player as a pattern for Plone
+1.4.0
 
 Features
 --------
 
-- Can be bullet points
-
-
-Examples
---------
-
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
+- Registers wavesurfer-js resources for Plone
+- Example views for file, collection and folder content types
 
 
 Documentation
 -------------
 
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
-
-
-Translations
-------------
-
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
+More information about configuration options https://wavesurfer-js.org/docs/options.html
 
 
 Installation
@@ -56,14 +43,6 @@ Contribute
 
 - Issue Tracker: https://github.com/collective/collective.wavesurfer/issues
 - Source Code: https://github.com/collective/collective.wavesurfer
-- Documentation: https://docs.plone.org/foo/bar
-
-
-Support
--------
-
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
 
 
 License
