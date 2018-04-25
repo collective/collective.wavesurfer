@@ -29,6 +29,15 @@
       />
 
   <genericsetup:registerProfile
+      name="views"
+      title="collective.wavesurfer example views"
+      directory="profiles/views"
+      description="Installs the collective.wavesurfer add-on with example views."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.post_install"
+      />
+
+  <genericsetup:registerProfile
       name="uninstall"
       title="collective.wavesurfer (uninstall)"
       directory="profiles/uninstall"
@@ -41,7 +50,5 @@
       factory=".setuphandlers.HiddenProfiles"
       name="collective.wavesurfer-hiddenprofiles"
       />
-
-  <!-- -*- extra stuff goes here -*- -->
 
 </configure>
