@@ -6,8 +6,8 @@
 collective.wavesurfer
 =====================
 
-Implementation of https://wavesurfer-js.org audio player as a pattern for Plone
-1.4.0
+Implementation of https://wavesurfer-js.org audio player (1.4.0) as a pattern for Plone
+
 
 Features
 --------
