@@ -3219,6 +3219,7 @@ return WaveSurfer;
 
     // // default controls
     parser.addArgument('url', undefined);
+    parser.addArgument('peaks', undefined);
 
     // basic player settings
     parser.addArgument('height', 128);
@@ -3269,6 +3270,7 @@ return WaveSurfer;
 
             var wavesurfer = WaveSurfer.create({
                 container: this.$el.find('.waveformWrapper')[0],
+                peaks: options.peaks,
                 height: options.height,
                 waveColor: options.waveColor,
                 progressColor: options.progressColor,
@@ -3295,17 +3297,19 @@ return WaveSurfer;
 
             //desperate attempt to get base_url of the protraxx file
             //lets get it from options.url
-            var base_url=options.url.split('/@@')[0]
-            var peak_url=base_url+'/@@peaks';
+            // var base_url=options.url.split('/@@')[0]
+            // var peak_url=base_url+'/@@peaks';
 
-            //request peak data from traxx and feed it into wavesurfer
-            $.ajax({
-              url: peak_url,
-              context: document.body,
-            }).done(function(data) {
-              var peaks=JSON.parse(data)
-              wavesurfer.load(options.url,peaks)
-            });
+            // //request peak data from traxx and feed it into wavesurfer
+            // $.ajax({
+            //   url: peak_url,
+            //   context: document.body,
+            // }).done(function(data) {
+            //   var peaks=JSON.parse(data)
+            //   // wavesurfer.load(options.url,peaks)
+            // });
+            // debugger
+            wavesurfer.load(options.url, JSON.parse(options.peaks));
 
             $(this.$el.find('.controlsContainer')).prepend('<div class="playerControls">\
                                 <div class="btn btnPlay">\
