@@ -123,8 +123,9 @@
                                 </div>\
                               </div>');
 
-            $(this.$el.find('.playerControls .btnPlay')).bind( "click", function() {
-              wavesurfer.playPause();
+            $(this.$el.find('.playerControls .btnPlay')).bind("click", function () {
+                wavesurfer.setVolume(0.5);
+                wavesurfer.playPause();
               $(this).toggleClass('active');
             });
 
