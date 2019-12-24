@@ -3316,8 +3316,9 @@ return WaveSurfer;
                                 </div>\
                               </div>');
 
-            $(this.$el.find('.playerControls .btnPlay')).bind( "click", function() {
-              wavesurfer.playPause();
+            $(this.$el.find('.playerControls .btnPlay')).bind("click", function () {
+                wavesurfer.setVolume(0.5);
+                wavesurfer.playPause();
               $(this).toggleClass('active');
             });
 
@@ -3345,5 +3346,5 @@ require([
   'use strict';
 });
 
-define("/Users/peter/workspace/collective.wavesurfer/src/collective/wavesurfer/browser/static/bundle.js", function(){});
+define("/Users/peter/workspace/phonogen/buildout/srcphonogen/collective.wavesurfer/src/collective/wavesurfer/browser/static/bundle.js", function(){});
 
