@@ -115,6 +115,8 @@
             //     wavesurfer.play();
             // });
 
+            this.$el.data('wavesurfer', wavesurfer);
+
             log.debug('pattern initialized');
             },
 
