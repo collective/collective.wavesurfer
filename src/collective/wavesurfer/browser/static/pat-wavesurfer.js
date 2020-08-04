@@ -101,20 +101,38 @@
             });
             wavesurfer.load(options.url);
 
+            function stopAllPlayers() {
+              $('.pat-wavesurfer').each(function () {
+                console.log('all players')
+                var ws = $(this).data('wavesurfer');
+                ws.pause();
+                $(this).find('.btnPlay').removeClass('active');
+                console.log('one item pause')
+              });
+            }
+
             $(this.$el.find('.controlsContainer')).prepend('<div class="playerControls">\
                                 <div class="btn btnPlay">\
                                 </div>\
                               </div>');
 
             $(this.$el.find('.playerControls .btnPlay')).bind( "click", function() {
-              wavesurfer.playPause();
-              $(this).toggleClass('active');
+                if (wavesurfer.isPlaying()) {
+                  wavesurfer.pause();
+                  $(this).removeClass('active');
+
+                } else {
+                  stopAllPlayers();
+                  wavesurfer.play();
+                  $(this).addClass('active');
+
+                }
             });
 
             // wavesurfer.on('ready', function () {
             //     wavesurfer.play();
             // });
-
+            this.$el.data('wavesurfer', wavesurfer);
             log.debug('pattern initialized');
             },
 
