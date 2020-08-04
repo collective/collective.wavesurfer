@@ -19,24 +19,20 @@
   </records>
 
   <records
-      prefix="plone.resources/collective-wavesurfer"
+      prefix="plone.resources/wavesurfer-bundle"
       interface="Products.CMFPlone.interfaces.IResourceRegistry">
-    <value key="js">++plone++collective.wavesurfer/bundle.js</value>
-    <value key="css">
-      <element>++plone++collective.wavesurfer/pat-wavesurfer.less</element>
-    </value>
+    <value key="js">++plone++collective.wavesurfer/wavesurfer-bundle.js</value>
   </records>
 
   <records
       prefix="plone.bundles/wavesurfer"
       interface="Products.CMFPlone.interfaces.IBundleRegistry">
     <value key="resources">
-      <element>collective-wavesurfer</element>
+      <element>wavesurfer-bundle</element>
     </value>
     <value key="enabled">True</value>
-    <value key="jscompilation">++plone++collective.wavesurfer/wavesurfer-compiled.js</value>
-    <value key="csscompilation">++plone++collective.wavesurfer/wavesurfer-compiled.css</value>
-    <!-- <value key="last_compilation">2016-12-19 00:00:00</value> -->
+    <value key="jscompilation">++plone++collective.wavesurfer/wavesurfer-bundle-compiled.js</value>
+    <value key="last_compilation">2020-07-04 00:00:00</value>
     <value key="compile">True</value>
     <value key="depends">plone</value>
 
