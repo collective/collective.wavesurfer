@@ -120,11 +120,9 @@
 
             function stopAllPlayers() {
                 $('.pat-wavesurfer').each(function () {
-                  console.log('all players')
                   var ws = $(this).data('wavesurfer');
                     ws.pause();
                     $(this).find('.btnPlay').removeClass('active');
-                    console.log('one item pause')
                 });
             }
 
@@ -135,8 +133,8 @@
 
             $(this.$el.find('.playerControls .btnPlay')).bind("click", function () {
 
-                wavesurfer.setVolume(0.5);
                 // console.log(wavesurfer.container.parentElement.parentElement.className + ' ' + wavesurfer.isPlaying())
+                wavesurfer.setVolume(0.5);
                 if (wavesurfer.isPlaying()) {
                   wavesurfer.pause();
                   $(this).removeClass('active');
