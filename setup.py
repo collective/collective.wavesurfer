@@ -14,7 +14,7 @@ long_description = '\n\n'.join([
 
 setup(
     name='collective.wavesurfer',
-    version='1.0a1',
+    version='1.1',
     description="wavesurfer.js player pattern for Plone",
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
