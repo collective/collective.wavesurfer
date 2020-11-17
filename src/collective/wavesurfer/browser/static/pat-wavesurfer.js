@@ -75,7 +75,7 @@
 
             var options = this.options = parser.parse(this.$el);
 
-            var wavesurfer = WaveSurfer.create({
+            this.wavesurfer = WaveSurfer.create({
                 container: this.$el.find('.waveformWrapper')[0],
                 peaks: options.peaks,
                 height: options.height,
@@ -113,16 +113,17 @@
             //   context: document.body,
             // }).done(function(data) {
             //   var peaks=JSON.parse(data)
-            //   // wavesurfer.load(options.url,peaks)
+            //   // this.wavesurfer.load(options.url,peaks)
             // });
             // debugger
-            wavesurfer.load(options.url, JSON.parse(options.peaks));
+            this.wavesurfer.load(options.url, JSON.parse(options.peaks));
 
             function stopAllPlayers() {
-                $('.pat-wavesurfer').each(function () {
-                  var ws = $(this).data('wavesurfer');
+                $('.pat-wavesurfer').each(function (idx, el) {
+                    var $el = $(el);
+                    var ws = $el.data('wavesurfer');
                     ws.pause();
-                    $(this).find('.btnPlay').removeClass('active');
+                    $el.find('.btnPlay').removeClass('active');
                 });
             }
 
@@ -131,25 +132,27 @@
                                 </div>\
                               </div>');
 
-            $(this.$el.find('.playerControls .btnPlay')).bind("click", function () {
+            $(this.$el.find('.playerControls .btnPlay')).bind("click", function (el) {
 
-                // console.log(wavesurfer.container.parentElement.parentElement.className + ' ' + wavesurfer.isPlaying())
-                wavesurfer.setVolume(0.5);
-                if (wavesurfer.isPlaying()) {
-                  wavesurfer.pause();
-                  $(this).removeClass('active');
+                // console.log(this.wavesurfer.container.parentElement.parentElement.className + ' ' + this.wavesurfer.isPlaying())
+                this.wavesurfer.setVolume(0.5);
+                if (this.wavesurfer.isPlaying()) {
+                  this.wavesurfer.pause();
+                  $(el.target).removeClass('active');
 
                 } else {
                   stopAllPlayers();
-                  wavesurfer.play();
-                  $(this).addClass('active');
+                  this.wavesurfer.play();
+                  $(el.target).addClass('active');
 
                 }
-            });
+            }.bind(this));
 
-            this.$el.data('wavesurfer', wavesurfer);
+            this.$el.data('wavesurfer', this.wavesurfer);
             log.debug('pattern initialized');
 
+
+            window.addEventListener('resize', this.wavesurfer.drawBuffer.bind(this.wavesurfer));
         },
     });
 
