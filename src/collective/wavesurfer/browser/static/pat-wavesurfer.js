@@ -59,7 +59,7 @@
     parser.addArgument('skipLength', 2);
 
     // backend
-    parser.addArgument('backend', 'WebAudio');
+    parser.addArgument('backend', 'MediaElement');
     parser.addArgument('mediaType', 'audio');
 
 
@@ -116,7 +116,7 @@
             //   // this.wavesurfer.load(options.url,peaks)
             // });
             // debugger
-            this.wavesurfer.load(options.url, JSON.parse(options.peaks));
+            this.wavesurfer.load(options.url, JSON.parse(options.peaks), "none");
 
             function stopAllPlayers() {
                 $('.pat-wavesurfer').each(function (idx, el) {
