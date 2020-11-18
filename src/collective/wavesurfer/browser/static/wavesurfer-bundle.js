@@ -4,8 +4,8 @@ require([
   'pat-registry',
   'pat-parser',
   'pat-logger',
-  'pat-wavesurfer',
-  'wavesurfer'
+  'wavesurfer',
+  'pat-wavesurfer'
 ], function() {
   'use strict';
 });
